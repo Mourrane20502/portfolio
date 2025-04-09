@@ -3,6 +3,7 @@ import drillShop from "../images/drillshop.jpg";
 import initcom from "../images/initcom.jpg";
 import initcomplv from "../images/initcomplv.jpg";
 import pricingCard from "../images/pricingCard.jpg";
+import todoApp from "../images/todoapp.jpg";
 
 export const MyPersonnalData = {
   name: "Mohamed Mourrane",
@@ -66,19 +67,12 @@ export const MyProjects = [
   },
   {
     id: 5,
-    name: "Crud App of users",
+    name: "TodoApp With Authentication System",
     description:
-      "This is a simple CRUD application built with React and Tailwind CSS And Express Js MongoDb. It allows users to create, read, update, and delete user information.",
-    tools: [
-      "Next.js",
-      "Tailwind CSS",
-      "TypeScript",
-      "Shadcn UI",
-      "Express",
-      "MongoDB",
-    ],
-    image: pricingCard,
-    githubRepository: "https://github.com/Mourrane20502/pricingcard",
-    liveDemo: "https://pricingcard-rose.vercel.app/",
+      "TodoApp with Authentication is a full-stack task manager built with Next.js, TypeScript, and Tailwind CSS. It features secure user auth via Kinde and a backend powered by Express.js and MongoDB, allowing users to manage tasks with full CRUD functionality in a clean, modern UI.",
+    tools: ["Next.js", "Tailwind CSS", "TypeScript", "Shadcn UI"],
+    image: todoApp,
+    githubRepository: "https://github.com/Mourrane20502/TodoApp",
+    liveDemo: "https://todo-app-taupe-omega-50.vercel.app/",
   },
 ];

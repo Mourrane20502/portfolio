@@ -35,7 +35,9 @@ export default function Home() {
     <div className="min-h-screen flex flex-col items-center justify-start">
       <Navbar />
       <section className="flex flex-col items-center justify-center mt-10 px-4">
-        <h2 className="text-3xl font-bold text-gray-800 mb-6">Projects</h2>
+        <h2 className="text-3xl dark:text-white font-bold text-gray-800 mb-6">
+          Projects
+        </h2>
         <div className="grid grid-cols-1 gap-6 w-full max-w-5xl">
           {MyProjects.map((project) => (
             <div
@@ -67,7 +69,7 @@ export default function Home() {
               <div className="flex justify-between items-center p-3">
                 <Button
                   asChild
-                  className="text-white hover:bg-black cursor-pointer py-5 hover:none"
+                  className="text-white dark:bg-black hover:bg-black cursor-pointer py-5 hover:none"
                 >
                   <Link href={project.githubRepository} target="_blank">
                     GitHub
@@ -76,7 +78,7 @@ export default function Home() {
                 </Button>
                 <Button
                   asChild
-                  className="text-white cursor-pointer flex items-center justify-center py-5 hover:none"
+                  className="text-white dark:bg-black cursor-pointer flex items-center justify-center py-5 hover:none"
                 >
                   <Link href={project.liveDemo} target="_blank">
                     {" "}
