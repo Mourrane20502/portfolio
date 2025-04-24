@@ -1,10 +1,14 @@
+"use client";
 import { Button } from "@/components/ui/button";
 import { MyProjects } from "@/data/data";
 import { GithubIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 import { BiRightArrow } from "react-icons/bi";
 import {
+  SiExpress,
+  SiMongodb,
   SiNextdotjs,
   SiReact,
   SiShadcnui,
@@ -14,6 +18,8 @@ import {
 import Navbar from "./(me)/components/Navbar";
 
 export default function Home() {
+  const [showAllProjects, setShowAllProjects] = useState(false);
+
   const getToolIcon = (tool: string) => {
     switch (tool) {
       case "Next.js":
@@ -26,10 +32,16 @@ export default function Home() {
         return <SiReact className="text-blue-600 size-8" />;
       case "Shadcn UI":
         return <SiShadcnui className="text-black size-8" />;
+      case "MongoDB":
+        return <SiMongodb className="text-green-600 size-8" />;
+      case "Express.js":
+        return <SiExpress className="text-green-600 size-8" />;
       default:
         return null;
     }
   };
+
+  const projectsToShow = showAllProjects ? MyProjects : MyProjects.slice(0, 4);
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-start">
@@ -39,7 +51,7 @@ export default function Home() {
           Projects
         </h2>
         <div className="grid grid-cols-1 gap-6 w-full max-w-5xl">
-          {MyProjects.map((project) => (
+          {projectsToShow.map((project) => (
             <div
               key={project.id}
               className="group bg-white cursor-pointer border-gray-300 border-4 rounded-2xl shadow-md overflow-hidden transition-transform hover:-translate-y-1"
@@ -59,7 +71,6 @@ export default function Home() {
                   ))}
                 </div>
               </div>
-
               <div className="p-5">
                 <h3 className="text-xl font-semibold text-gray-800">
                   {project.name}
@@ -81,14 +92,21 @@ export default function Home() {
                   className="text-white dark:bg-black cursor-pointer flex items-center justify-center py-5 hover:none"
                 >
                   <Link href={project.liveDemo} target="_blank">
-                    {" "}
-                    Live Demo <BiRightArrow className="ml-1" />{" "}
+                    Live Demo <BiRightArrow className="ml-1" />
                   </Link>
                 </Button>
               </div>
             </div>
           ))}
         </div>
+        {!showAllProjects && (
+          <Button
+            className="mt-6 text-white dark:bg-black hover:bg-black cursor-pointer py-3"
+            onClick={() => setShowAllProjects(true)}
+          >
+            See All Projects
+          </Button>
+        )}
       </section>
     </div>
   );
