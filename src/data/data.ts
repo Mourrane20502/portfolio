@@ -1,3 +1,4 @@
+import authApp from "../images/authapp.jpg";
 import digitech from "../images/digitech.jpg";
 import drillShop from "../images/drillshop.jpg";
 import initcom from "../images/initcom.jpg";
@@ -66,7 +67,7 @@ export const MyProjects = [
     liveDemo: "https://pricingcard-rose.vercel.app/",
   },
   {
-    id: 5,
+    id: 6,
     name: "TodoApp With Authentication System",
     description:
       "TodoApp with Authentication is a full-stack task manager built with Next.js, TypeScript, and Tailwind CSS. It features secure user auth via Kinde and a backend powered by Express.js and MongoDB, allowing users to manage tasks with full CRUD functionality in a clean, modern UI.",
@@ -74,5 +75,15 @@ export const MyProjects = [
     image: todoApp,
     githubRepository: "https://github.com/Mourrane20502/TodoApp",
     liveDemo: "https://todo-app-taupe-omega-50.vercel.app/",
+  },
+  {
+    id: 7,
+    name: "Auth App",
+    description:
+      "**Auth App** is a full-stack authentication application built using React, TypeScript, Express.js, and MongoDB. It supports user registration, login, JWT authentication, and secure dashboard access. The frontend is styled with Tailwind CSS and deployed on Vercel, while the backend is hosted on Render.",
+    tools: ["React", "TypeScript", "Tailwind CSS", "Express.js", "MongoDB"],
+    image: authApp,
+    githubRepository: "https://github.com/Mourrane20502/auth-mernstack",
+    liveDemo: "https://auth-mernstack.vercel.app/",
   },
 ];
