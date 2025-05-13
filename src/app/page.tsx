@@ -44,9 +44,18 @@ export default function Home() {
   const projectsToShow = showAllProjects ? MyProjects : MyProjects.slice(0, 4);
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-start">
+    <div className="relative min-h-screen flex flex-col items-center justify-start overflow-hidden">
+      {/* Light mode background */}
+      <div className="absolute inset-0 -z-10 h-full w-full bg-white bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px] dark:hidden"></div>
+
+      {/* Dark mode background */}
+      <div className="dark:block hidden absolute inset-0 -z-10 bg-black">
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]"></div>
+        <div className="absolute left-0 right-0 top-[-10%] h-[1000px] w-[1000px] rounded-full bg-[radial-gradient(circle_400px_at_50%_300px,#fbfbfb36,#000)]"></div>
+      </div>
+
       <Navbar />
-      <section className="flex flex-col items-center justify-center mt-10 px-4">
+      <section className="flex flex-col items-center justify-center mt-10 px-4 z-10">
         <h2 className="text-3xl dark:text-white font-bold text-gray-800 mb-6">
           Projects
         </h2>
